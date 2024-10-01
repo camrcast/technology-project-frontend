@@ -1,2 +1,2 @@
-# technlogy-project-frontend
+# Music Review Forum
 Revature Technology Project Frontend
