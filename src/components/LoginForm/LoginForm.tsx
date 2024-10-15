@@ -14,14 +14,7 @@ function LoginForm({onSubmit, error}: props) {
     function submit(e: React.FormEvent) {
         e.preventDefault();
         onSubmit(username, password);
-    }
-
-    function createErrorClass() {
-        if (!error) {
-            return "hidden"
-        }
-        return "error"
-    }   
+    } 
 
     return(
         <>
@@ -34,7 +27,7 @@ function LoginForm({onSubmit, error}: props) {
                 <label htmlFor="passwordInput">Password:</label>
                 <input type="password" className="input" id="passwordInput" placeholder="Password" onChange={(e: any) => {setPassword(e.target.value)}}/>
             </div>
-            <small className={createErrorClass()}>{error}</small>
+            {error && <small className="error">{error}</small>}
             <button>Submit</button>
         </form>
         </>

@@ -18,10 +18,6 @@ form {
     color: red;
 }
 
-.hidden {
-    display: none;
-}
-
 button {
     max-width: max-content;
 }
