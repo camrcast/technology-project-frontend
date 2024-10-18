@@ -42,9 +42,9 @@ describe("Register Page", () => {
         fireEvent.click(submitButton);
 
         await waitFor(() => {
-            const successElementPost = screen.getByText(successText);
+            const successElementPost = screen.queryByText(successText);
             expect(successElementPost).toBeInTheDocument();
-        }, { timeout: 1000 });
+        });
     });
 
     test("Renders error if request fails", async () => {
@@ -62,7 +62,7 @@ describe("Register Page", () => {
         fireEvent.click(submitButton);
 
         await waitFor(() => {
-            const errorElementPost = screen.getByText(error.error);
+            const errorElementPost = screen.queryByText(error.error);
             expect(errorElementPost).toBeInTheDocument();
         });
     });
