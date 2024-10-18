@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import {useContext} from "react";
 import { UserContext } from '../../context/userContext'
 import NavLink from "../../components/NavLink";
 
