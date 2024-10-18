@@ -7,7 +7,6 @@ jest.mock("../utilities/fetch");
 jest.mock("react-router-dom");
 describe("Login Page", () => {
     test("Renders error if request fails", async () => {
-
         const login = render(<Login/>);
         const error = {
             error: "invalid username/password"
