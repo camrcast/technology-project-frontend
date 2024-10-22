@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import Post from "../pages/Post";
 import fetch from "../utilities/fetch";
@@ -22,9 +22,11 @@ describe("Post Page", () => {
 
         fireEvent.click(submitButton);
 
-        errorElement = screen.queryByText(error.error);
-        expect(errorElement).toBeDefined();
-    });
+        await waitFor(() => {
+            errorElement = screen.queryByText(error.error);
+            expect(errorElement).toBeInTheDocument();
+        }); 
+    }); 
 
     test("Renders success if request succeeds", async () => {
         render(<Post/>);
@@ -39,8 +41,10 @@ describe("Post Page", () => {
 
         fireEvent.click(submitButton);
 
-        successElement = screen.queryByText(successText);
-        expect(successElement).toBeDefined();
+        await waitFor(() => {
+            successElement = screen.queryByText(successText);
+            expect(successElement).toBeInTheDocument();
+        });
     });
 
     test("Renders form elements for title, score, description, tags, and submit", () => {
@@ -53,11 +57,11 @@ describe("Post Page", () => {
         const tagsInput = screen.getByLabelText("Tags");
 
 
-        expect(submitButton).toBeDefined();
-        expect(titleInput).toBeDefined();
-        expect(scoreInput).toBeDefined();
-        expect(descriptionInput).toBeDefined();
-        expect(tagsInput).toBeDefined();
+        expect(submitButton).toBeInTheDocument();
+        expect(titleInput).toBeInTheDocument();
+        expect(scoreInput).toBeInTheDocument();
+        expect(descriptionInput).toBeInTheDocument();
+        expect(tagsInput).toBeInTheDocument();
     });
 
     test("Form elements for title, score, description are required", () => {
@@ -85,6 +89,6 @@ describe("Post Page", () => {
 
         const title = screen.getByText("Create a Post");
 
-        expect(title).toBeDefined();
+        expect(title).toBeInTheDocument();
     });
 })
