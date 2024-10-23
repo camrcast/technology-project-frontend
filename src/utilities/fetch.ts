@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3001"
+const BASE_URL = "http://3.23.105.150:3001"
 
 async function fetchJson(method: string, path: string, body?: {}, q?: {}) {
     const options: RequestInit= {
