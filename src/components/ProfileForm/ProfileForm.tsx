@@ -10,11 +10,16 @@ interface props {
 function ProfileForm({onSubmit, error}: props) {
     const [username, setUsername] = useState("");
     const [bio, setBio] = useState("");
-    const [genres, setGenres] = useState([""]);
+    const [genres, setGenres] = useState("");
 
     function submit(e: React.FormEvent) {
         e.preventDefault();
-        onSubmit(username, bio, genres);
+        let genresSet = new Set<string>();
+        if (genres !== undefined && genres !== "") {
+            genresSet = new Set(genres.replaceAll(" ", "").toLowerCase().split(","));
+            genresSet.delete('');
+        }
+        onSubmit(username, bio, Array.from(genresSet));
     }
 
     return(
@@ -30,7 +35,7 @@ function ProfileForm({onSubmit, error}: props) {
             </div>
             <div className="form-group">
                 <label htmlFor="genresInput">Genres:</label>
-                <input type="text" className="input" id="genresInput" placeholder="Enter here" onChange={(e: any) => {setGenres(e.target.value.toLowerCase().split(","))}}/>
+                <input type="text" className="input" id="genresInput" placeholder="Enter here" onChange={(e: any) => {setGenres(e.target.value)}}/>
             </div>
             {error && <small className="error">{error}</small>}
             <button>Submit</button>
