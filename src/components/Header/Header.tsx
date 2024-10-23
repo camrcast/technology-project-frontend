@@ -14,7 +14,13 @@ function Header() {
                 The Song Study Site
             </Link>
             <nav>
-                {!user ? <NavLink to="/login">Login</NavLink> : <NavLink to="/profile">Profile</NavLink>} 
+                {user && <NavLink to="/post">Post</NavLink>}
+                {!user ? 
+                    <>
+                        <NavLink to="/login">Login</NavLink>
+                        <NavLink to="/register">Register</NavLink>
+                    </> : 
+                    <NavLink to="/profile">Profile</NavLink>} 
             </nav>
         </header>
     )
