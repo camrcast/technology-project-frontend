@@ -10,7 +10,7 @@ import { User, UserContext } from './context/userContext';
 
 function App() {
   const [user, setUser] = useState<User>();
-
+  
   return (
     <>
       <UserContext.Provider value={user}>
