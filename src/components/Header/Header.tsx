@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 
 import NavLink from "../NavLink";
@@ -14,7 +14,7 @@ function Header() {
                 The Song Study Site
             </Link>
             <nav>
-                {!user ? <NavLink to="/login">Login</NavLink> : <NavLink to="/profile">Profile</NavLink>}
+                {!user ? <NavLink to="/login">Login</NavLink> : <NavLink to="/profile">Profile</NavLink>} 
             </nav>
         </header>
     )
