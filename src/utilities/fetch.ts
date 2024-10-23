@@ -11,7 +11,6 @@ async function fetchJson(method: string, path: string, body?: {}, q?: {}) {
     }
     const query = q ? new URLSearchParams(q).toString() : "";
 
-    console.log(`Making request to ${BASE_URL}${path}?${query} with query ${options}`);
     const response = await fetch(`${BASE_URL}${path}?${query}`, options);
 
     if (response.status === 404) {
