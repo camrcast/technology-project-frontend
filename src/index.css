@@ -45,3 +45,7 @@ code {
 .justify-evenly {
   justify-content: space-evenly;
 }
+
+.justify-between {
+  justify-content: space-between;
+}
