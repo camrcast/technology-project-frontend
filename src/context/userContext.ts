@@ -5,7 +5,8 @@ export interface User {
     username: string,
     role: string,
     bio: string,
-    genres: string[]
+    genres: string[],
+    profileImage: string,
 }
 
 export const UserContext = createContext<User | undefined>(undefined);

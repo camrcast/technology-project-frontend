@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NavLink from "../NavLink";
 import "./Header.css";
 import { UserContext } from "../../context/userContext";
+import Avatar from "../Avatar";
 
 function Header() {
     const user = useContext(UserContext);
@@ -20,7 +21,7 @@ function Header() {
                         <NavLink to="/login">Login</NavLink>
                         <NavLink to="/register">Register</NavLink>
                     </> : 
-                    <NavLink to="/profile">Profile</NavLink>} 
+                    <Link to={`/profile/${user.itemID}`}><Avatar alt="Profile Image" src={user.profileImage}/></Link>} 
             </nav>
         </header>
     )
