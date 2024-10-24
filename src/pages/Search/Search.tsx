@@ -20,6 +20,7 @@ function Search() {
             }
             const {Posts} = await fetch("get", `/posts/tags/search?tags=${tags}&inclusive=${inclusive}`);
             console.log(Object.entries(Posts[0]));
+            //TODO add post objects
             setResult(Posts.map((post: Object) => <div className="Container" dangerouslySetInnerHTML={{__html: JSON.stringify(post)}}></div>));
             setDisplaySuccess(true);
             setError(undefined);
