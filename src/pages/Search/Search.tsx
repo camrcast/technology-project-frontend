@@ -14,6 +14,7 @@ function Search() {
 
     async function search(tags: string, inclusive: string) {
         try {
+            setResult(undefined);
             if (inclusive !== "1"){
                 inclusive = "0";
             }
