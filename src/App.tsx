@@ -16,7 +16,7 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/login" element={<Login setUser={setUser}/>}/>
-          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/profile/:id" element={<Profile/>}/>
         </Routes>
       </UserContext.Provider>
     </>

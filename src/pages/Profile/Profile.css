@@ -1,6 +1,19 @@
-main {
+#profile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.profile-content {
+    display: flex;
+}
+
+.profile-image {
+    aspect-ratio: 1 / 1;
+    max-width: 75%;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    border: solid var(--secondary-color) 1px;
 }
