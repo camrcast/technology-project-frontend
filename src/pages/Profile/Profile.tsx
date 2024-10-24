@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
+import NavLink from "../../components/NavLink";
 
 import fetch from "../../utilities/fetch";
 import { User } from "../../context/userContext";
@@ -69,6 +70,9 @@ function Profile() {
             :
             <p>Loading / Profile Not Found</p>
             }
+            <nav>
+                {<NavLink to="/profile/update">Update Profile</NavLink>}
+            </nav>
         </main>
     )
 }
