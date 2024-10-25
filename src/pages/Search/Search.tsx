@@ -20,7 +20,7 @@ function Search() {
                 inclusive = "0";
             }
             const {Posts} = await fetch("get", `/posts/tags/search?tags=${tags}&inclusive=${inclusive}`);
-            setResult(Posts.map((post: any) => <div><PostCard post={post} key={post.itemID}/></div>));
+            setResult(Posts.map((post: any) => <PostCard post={post} key={post.itemID}/>));
             setDisplaySuccess(true);
             setError(undefined);
         } catch (err: any) {
