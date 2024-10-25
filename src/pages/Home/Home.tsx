@@ -14,7 +14,6 @@ function Profile() {
         const getPosts = async () => {
             try {
                 const {posts} = await fetch("get", "/posts");
-                let page = 5;
                 if (posts.length < 5){
                     setPosts(posts.reverse());
                 }
@@ -31,7 +30,7 @@ function Profile() {
         <main id="homepage">
             <h1>WELCOME</h1>
                 <section id="posts" className="postssection">
-                    <h2>Recent Posts</h2>
+                    <h2>Top 5 Recent Posts</h2>
                     {posts.length !== 0 ? 
                         posts.map((post: Post) => {
                             return <PostCard post={post} key={post.itemID}/>
