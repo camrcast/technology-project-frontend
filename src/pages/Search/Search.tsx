@@ -6,9 +6,7 @@ import fetch from "../../utilities/fetch";
 import PostCard from "../../components/PostCard";
 
 function Search() {
-
-    const parser = new DOMParser();
-
+    
     const [error, setError] = useState();
     const [displaySuccess, setDisplaySuccess] = useState(false);
     const [result, setResult] = useState();
