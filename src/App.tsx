@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import { User, UserContext } from './context/userContext';
 import CreatePost from './pages/Post';
-
+import Home from './pages/Home';
 
 function App() {
   const [user, setUser] = useState<User>();
@@ -19,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login setUser={setUser}/>}/>
           <Route path="/register" element={<Register setUser={setUser}/>}/>
           <Route path="/post" element={<CreatePost/>}/>
+          <Route path="/" element={<Home/>}/>
         </Routes>
       </UserContext.Provider>
     </>
