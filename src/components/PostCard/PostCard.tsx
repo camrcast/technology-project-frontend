@@ -2,6 +2,7 @@ import React from "react";
 
 import "./PostCard.css";
 import { Link } from "react-router-dom";
+import { Song } from "../SongForm/SongForm";
 
 const PostCard = ({post}: Props) => {
     const {title, description, isFlagged, itemID, likedBy, postedBy, replies, score, song} = post;
@@ -36,21 +37,6 @@ export interface Post {
     score: number,
     title: string,
     song: Song
-}
-
-interface Song {    
-    spotifyId: string,
-    name: string,
-    link: string,
-    popularity: number,
-    image: string,
-    artists: Artists[]
-}
-
-interface Artists {
-    id: string,
-    name: string,
-    url: string
 }
 
 export default PostCard;
