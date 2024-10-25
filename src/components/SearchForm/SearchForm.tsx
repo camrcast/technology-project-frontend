@@ -23,9 +23,9 @@ function SearchForm({onSubmit, error}: props) {
                 <label htmlFor="tags">Tags</label>
                 <input type="text" className="input" id="tagInput" placeholder="tags,to,search" onChange={(e: any) => {setTags(e.target.value)}}/>
             </div>
-            <div className="form-group">
+            <div className="check-group">
                 <label htmlFor="passwordInput">Inclusive</label>
-                <input type="checkbox" className="input" id="inclusiveInput" onChange={(e: any) => {setInclusive(e.target.value)}}/>
+                <input type="checkbox" className="inputcheck" id="inclusiveInput" onChange={(e: any) => {setInclusive(e.target.value)}}/>
             </div>
             {error && <small className="error">{error}</small>}
             <button>Search</button>
