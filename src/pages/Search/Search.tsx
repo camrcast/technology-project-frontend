@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import "./Search.css";
 import SearchForm from "../../components/SearchForm";
 import fetch from "../../utilities/fetch";
+import PostCard from "../../components/PostCard";
 
 function Search() {
 
@@ -19,9 +20,7 @@ function Search() {
                 inclusive = "0";
             }
             const {Posts} = await fetch("get", `/posts/tags/search?tags=${tags}&inclusive=${inclusive}`);
-            console.log(Object.entries(Posts[0]));
-            //TODO add post objects
-            setResult(Posts.map((post: Object) => <div className="Container" dangerouslySetInnerHTML={{__html: JSON.stringify(post)}}></div>));
+            setResult(Posts.map((post: any) => <div><PostCard post={post} key={post.itemID}/></div>));
             setDisplaySuccess(true);
             setError(undefined);
         } catch (err: any) {
